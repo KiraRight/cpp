@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="printer.Printer"/>
+    <fullyQualifiedTypeName name="human.Human"/>
+    <fullyQualifiedTypeName name="printer.Xerox"/>
+    <fullyQualifiedTypeName name="paper.DrawingPaper"/>
+    <fullyQualifiedTypeName name="paper.OfficePaper"/>
+    <fullyQualifiedTypeName name="paper.Paper"/>
+</qualifiedTypeNameHistroy>
