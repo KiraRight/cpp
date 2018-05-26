@@ -1,0 +1,127 @@
+/*package lab1; 
+ 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class one extends JFrame
+{
+    public one()
+    {
+        super("FlowLayout");
+        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setSize(400, 120);
+        Container container = getContentPane();
+        container.setLayout (new FlowLayout(FlowLayout.LEFT));
+        container.add( new JLabel("Масса"));
+        JTextField mass1TextField = new JTextField("1                                    ");
+        container.add(mass1TextField);
+        container.add( new JLabel("Масса"));
+        JTextField mass2TextField = new JTextField("1                                    ");
+        container.add(mass2TextField);
+        container.add( new JLabel("Скорость"));
+        JTextField speed1TextField = new JTextField("50                            ");
+        container.add(speed1TextField);
+        container.add( new JLabel("Скорость"));
+        JTextField speed2TextField = new JTextField("-50                           ");
+        container.add(speed2TextField);
+        JLabel resultLabel = new JLabel("Скорость после столкновения: 0     ");
+        container.add(resultLabel);
+        JButton calculateButton = new JButton("Посчитать");
+        container.add( calculateButton);
+        calculateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				Integer mass1 = Integer.parseInt(mass1TextField.getText());
+				Integer mass2 = Integer.parseInt(mass2TextField.getText());
+				Integer speed1 = Integer.parseInt(speed1TextField.getText());
+				Integer speed2 = Integer.parseInt(speed2TextField.getText());
+				Integer result = (mass1 * speed1 + mass2 * speed2) / (mass1 + mass2);
+				resultLabel.setText("Скорость после столкновения: " + result);
+			}
+		});
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        new one();
+    }
+}*/
+
+package divmod;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class RemainderQuotient 
+{	
+	public static void addComponentsToPane(Container pane) 
+	{
+		pane.setLayout(new FlowLayout());
+        pane.setLayout (new FlowLayout(FlowLayout.LEFT));
+        pane.add( new JLabel("Масса"));
+        JTextField mass1TextField = new JTextField("1");
+        mass1TextField.setPreferredSize(new Dimension(110, 20));
+        pane.add(mass1TextField);
+        pane.add( new JLabel("Масса"));
+        JTextField mass2TextField = new JTextField("1");
+        mass2TextField.setPreferredSize(new Dimension(110, 20));
+        pane.add(mass2TextField);
+        pane.add( new JLabel("Скорость"));
+        JTextField speed1TextField = new JTextField("50");
+        speed1TextField.setPreferredSize(new Dimension(94, 20));
+        pane.add(speed1TextField);
+        pane.add( new JLabel("Скорость"));
+        JTextField speed2TextField = new JTextField("-50");
+        speed2TextField.setPreferredSize(new Dimension(94, 20));
+        pane.add(speed2TextField);
+        JLabel resultLabel = new JLabel("Скорость после столкновения: 0");
+        resultLabel.setPreferredSize(new Dimension(210, 20));
+        pane.add(resultLabel);
+        JButton calculateButton = new JButton("Посчитать");
+        pane.add( calculateButton);
+        
+        calculateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				try
+				{
+					Integer mass1 = Integer.parseInt(mass1TextField.getText());
+					Integer mass2 = Integer.parseInt(mass2TextField.getText());
+					Integer speed1 = Integer.parseInt(speed1TextField.getText());
+					Integer speed2 = Integer.parseInt(speed2TextField.getText());
+					Integer result = (mass1 * speed1 + mass2 * speed2) / (mass1 + mass2);
+					resultLabel.setText("Скорость после столкновения: " + result);
+				}
+				catch(NumberFormatException exp)
+				{
+					resultLabel.setText("Пожалуйста, введите целое число: ");
+				}
+			}
+		});
+	}
+	private static void createAndShowGUI() 
+	{
+		JFrame frame = new JFrame("Find out remainder and quotient");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(350, 120);
+		frame.setResizable(false);
+
+		addComponentsToPane(frame.getContentPane());
+		frame.setVisible(true);
+		}
+	public static void main(String[] args) 
+	{
+		javax.swing.SwingUtilities.invokeLater(new Runnable() 
+		{
+			public void run() 
+			{
+				createAndShowGUI();
+			}
+		});
+	}
+}
