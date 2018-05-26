@@ -1,8 +1,0 @@
-package hiswt;
-
-public class PhotoPaper extends Paper {
-	public PhotoPaper()
-	{
-		//super();
-	}
-}
